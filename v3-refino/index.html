@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-logo="L3" data-paleta="P1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{SITE_NAME}} — Elétrica residencial, predial, industrial e reforma em Itaquaquecetuba e Grande SP</title>
+  <meta name="description" content="Instalações, manutenção e projetos elétricos residenciais, prediais, industriais e de reforma. Atendimento em Itaquaquecetuba e toda a Grande São Paulo." />
+  <meta name="theme-color" content="#121417" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-variable-latin.woff2" crossorigin />
+  <link
+    rel="preload"
+    as="image"
+    imagesrcset="assets/img/fotos-web/02-sm.webp 700w, assets/img/fotos-web/02.webp 1080w"
+    imagesizes="100vw"
+    fetchpriority="high"
+  />
+
+  <!-- Intro: só marca o <html> se for a 1ª visita da sessão e sem reduced-motion.
+       Sem JS (ou já vista) o overlay nem é exibido: o site aparece normal. -->
+  <script>try{if(sessionStorage.getItem("ie_intro_seen")!=="1"&&!matchMedia("(prefers-reduced-motion: reduce)").matches){sessionStorage.setItem("ie_intro_seen","1");document.documentElement.classList.add("intro-pending")}}catch(e){}</script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/scroll-cinema.css" />
+</head>
+<body>
+  <div id="scroll-sentinel" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <div class="intro-overlay" id="intro">
+    <div class="intro-mark" aria-hidden="true">
+      <svg class="logo-svg intro-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+      <span class="intro-word"><span class="intro-word-inner">Ideal Elétrica</span></span>
+    </div>
+    <button type="button" class="intro-skip" id="intro-skip">Pular</button>
+  </div>
+
+  <header class="header header--over">
+    <div class="container">
+      <div class="header-start">
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+      <a href="index.html" class="brand" aria-label="Ideal Elétrica">
+        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+      </a>
+      <div class="header-end">
+        <a href="#" data-site-href="wa" class="btn btn-primary btn-sm nav-cta"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button type="button" class="mobile-menu-close" aria-label="Fechar menu">×</button>
+    <nav class="mobile-menu-links" aria-label="Navegação principal">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <a href="#" data-site-href="wa" class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Chamar no WhatsApp</a>
+  </div>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-media">
+        <img
+          src="assets/img/fotos-web/02.webp"
+          srcset="assets/img/fotos-web/02-sm.webp 700w, assets/img/fotos-web/02.webp 1080w"
+          sizes="100vw"
+          width="1080"
+          height="608"
+          alt="Jardim residencial com iluminação externa instalada pela Ideal Elétrica, ao entardecer"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <span class="eyebrow reveal">Itaquaquecetuba e Grande São Paulo</span>
+            <h1 class="hero-title reveal">Elétrica que protege sua casa, <em>não só liga a luz</em></h1>
+            <p class="lede reveal">Instalação, manutenção e projetos elétricos para residências e empresas, dentro da norma, em toda a Grande São Paulo.</p>
+            <div class="hero-actions reveal">
+              <a href="#" data-site-href="wa" class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Chamar no WhatsApp</a>
+              <a href="servicos.html" class="btn btn-outline">Ver serviços<svg class="btn-icon btn-icon--end" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h11.5M11 5.5l4.5 4.5-4.5 4.5"/></svg></a>
+            </div>
+            <div class="hero-trust reveal">
+              <span class="hero-trust-item"><img src="assets/img/icon-check.svg" alt="" />Residencial, predial, industrial e reforma</span>
+              <span class="hero-trust-item"><img src="assets/img/icon-check.svg" alt="" />Atende toda a Grande SP</span>
+              <span class="hero-trust-item"><img src="assets/img/icon-check.svg" alt="" />Orçamento sem compromisso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANO 1 — PROBLEMA -->
+    <section class="scene scene--full scene--bottom" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/13-eletrocalha-galpao.webp"
+          srcset="assets/teste/13-eletrocalha-galpao-sm.webp 700w, assets/teste/13-eletrocalha-galpao.webp 787w"
+          sizes="100vw"
+          width="787"
+          height="1400"
+          alt="Eletrocalhas e eletrodutos aparentes sob o telhado de um galpão em obra"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="container">
+        <div class="scene-text reveal">
+          <h2>Todo defeito elétrico começa escondido</h2>
+          <p>Fiação no limite, quadro sem espaço, uma gambiarra antiga: o problema não avisa antes de falhar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANO 2 — TÉCNICA -->
+    <section class="scene scene--split scene--image-right container" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/20-quadro-embutido-parede.webp"
+          srcset="assets/teste/20-quadro-embutido-parede-sm.webp 700w, assets/teste/20-quadro-embutido-parede.webp 899w"
+          sizes="(min-width: 900px) 50vw, 100vw"
+          width="899"
+          height="1599"
+          alt="Quadro embutido na parede, com cabos coloridos organizados nos trilhos DIN"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="scene-text reveal">
+        <h2>Por trás da parede, técnica de verdade</h2>
+        <p>Cada curva de eletrocalha é feita sob medida, não encaixada na pressa.</p>
+      </div>
+    </section>
+
+    <!-- PLANO 3 — SEGURANÇA -->
+    <section class="scene scene--split container" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/11-quadro-residencial.webp"
+          srcset="assets/teste/11-quadro-residencial-sm.webp 700w, assets/teste/11-quadro-residencial.webp 1050w"
+          sizes="(min-width: 900px) 50vw, 100vw"
+          width="1050"
+          height="1400"
+          alt="Quadro de distribuição residencial aberto, com disjuntores e DR montados em trilho"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="scene-text reveal">
+        <h2>Segurança que a norma exige e a vista não mostra</h2>
+        <p>Quadros, proteções e sistemas de incêndio dimensionados para o uso real do imóvel.</p>
+      </div>
+    </section>
+
+    <!-- PLANO 4 — PLANEJAMENTO -->
+    <section class="scene scene--split scene--image-right container" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/14-sanca-residencial.webp"
+          srcset="assets/teste/14-sanca-residencial-sm.webp 700w, assets/teste/14-sanca-residencial.webp 1050w"
+          sizes="(min-width: 900px) 50vw, 100vw"
+          width="1050"
+          height="1400"
+          alt="Sala ainda vazia com sanca de luz contínua no forro"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="scene-text reveal">
+        <h2>Planejado antes do forro fechar</h2>
+        <p>Cada ponto de luz e tomada decidido junto com o projeto, não improvisado na hora.</p>
+      </div>
+    </section>
+
+    <!-- O TRABALHO QUE NINGUÉM VÊ -->
+    <section class="trabalho container" aria-labelledby="trabalho-titulo">
+      <div class="trabalho-head">
+        <h2 id="trabalho-titulo">O trabalho que ninguém vê</h2>
+        <p>Quadro organizado, cabo identificado, teste antes de entregar. É a parte que fica atrás da parede e dentro do painel que decide se a instalação dura.</p>
+      </div>
+      <ol class="trabalho-grid">
+        <li class="trabalho-item">
+          <figure class="trabalho-media">
+            <img src="assets/teste/18-quadro-disjuntores-din.webp" srcset="assets/teste/18-quadro-disjuntores-din-sm.webp 700w, assets/teste/18-quadro-disjuntores-din.webp 1080w" sizes="(min-width: 1000px) 280px, (min-width: 600px) 50vw, 100vw" width="1080" height="1435" alt="Quadro com disjuntores DIN e cabos flexíveis nas cores vermelho, azul, preto e verde-amarelo" loading="lazy" decoding="async" />
+          </figure>
+          <span class="trabalho-num" aria-hidden="true">01</span>
+          <h3>Norma</h3>
+          <p>Dimensionamento, proteção e identificação seguindo a norma técnica, não o costume.</p>
+        </li>
+        <li class="trabalho-item">
+          <figure class="trabalho-media trabalho-media--meter">
+            <img src="assets/teste/19-alicate-amperimetro.webp" srcset="assets/teste/19-alicate-amperimetro-sm.webp 700w, assets/teste/19-alicate-amperimetro.webp 899w" sizes="(min-width: 1000px) 280px, (min-width: 600px) 50vw, 100vw" width="899" height="1599" alt="Alicate amperímetro medindo um cabo no quadro, com disjuntores DIN e fiação colorida" loading="lazy" decoding="async" />
+          </figure>
+          <span class="trabalho-num" aria-hidden="true">02</span>
+          <h3>Segurança</h3>
+          <p>Cada circuito é medido e testado antes de ser entregue.</p>
+        </li>
+        <li class="trabalho-item">
+          <figure class="trabalho-media">
+            <img src="assets/teste/07-cabos-aninhados.webp" srcset="assets/teste/07-cabos-aninhados-sm.webp 700w, assets/teste/07-cabos-aninhados.webp 1400w" sizes="(min-width: 1000px) 280px, (min-width: 600px) 50vw, 100vw" width="1400" height="788" alt="Cabos vermelhos dentro de um quadro, dobrados em curvas iguais" loading="lazy" decoding="async" />
+          </figure>
+          <span class="trabalho-num" aria-hidden="true">03</span>
+          <h3>Prazo</h3>
+          <p>O prazo é combinado no orçamento e, se algo mudar, você sabe antes.</p>
+        </li>
+        <li class="trabalho-item">
+          <figure class="trabalho-media">
+            <img src="assets/teste/17-nicho-led.webp" srcset="assets/teste/17-nicho-led-sm.webp 700w, assets/teste/17-nicho-led.webp 899w" sizes="(min-width: 1000px) 280px, (min-width: 600px) 50vw, 100vw" width="899" height="1599" alt="Nicho em arco com fita de LED contornando a abertura" loading="lazy" decoding="async" />
+          </figure>
+          <span class="trabalho-num" aria-hidden="true">04</span>
+          <h3>Garantia</h3>
+          <p>O serviço sai com garantia, e quem instalou responde por ele.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PLANO 5 — RESULTADO RESIDENCIAL -->
+    <section class="scene scene--full scene--bottom" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/21-jantar-cozinha-led.webp"
+          srcset="assets/teste/21-jantar-cozinha-led-sm.webp 700w, assets/teste/21-jantar-cozinha-led.webp 1050w"
+          sizes="100vw"
+          width="1050"
+          height="1400"
+          alt="Sala de jantar e cozinha com pendente, fita de LED no balcão e iluminação no forro"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="container">
+        <div class="scene-text reveal">
+          <h2>Luz desenhada para cada ambiente da casa</h2>
+          <p>Embutidos, arandelas e circuitos pensados para o dia a dia de quem mora ali.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANO 6 — ÁREAS EXTERNAS -->
+    <section class="scene scene--split container" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/22-escada-externa-pedra.webp"
+          srcset="assets/teste/22-escada-externa-pedra-sm.webp 700w, assets/teste/22-escada-externa-pedra.webp 1050w"
+          sizes="(min-width: 900px) 50vw, 100vw"
+          width="1050"
+          height="1400"
+          alt="Escada externa e muros de pedra com arandelas, balizadores e fita de LED na floreira"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="scene-text reveal">
+        <h2>A instalação não para na porta de casa</h2>
+        <p>Jardim, varanda e pergolado também merecem projeto elétrico, não só extensão.</p>
+      </div>
+    </section>
+
+    <!-- PLANO 7 — MOMENTO FORTE -->
+    <section class="scene scene--full scene--center scene--momento" data-scene data-momento>
+      <div class="scene-media">
+        <img
+          src="assets/teste/23-spot-parede-pedra.webp"
+          srcset="assets/teste/23-spot-parede-pedra-sm.webp 700w, assets/teste/23-spot-parede-pedra.webp 1050w"
+          sizes="100vw"
+          width="1050"
+          height="1400"
+          alt="Spot embutido no forro riscando uma parede de pedra"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="container">
+        <div class="scene-text reveal">
+          <span class="momento-line" aria-hidden="true"></span>
+          <h2>O detalhe que muda como o espaço inteiro é lembrado</h2>
+          <p>Um projeto de iluminação bem feito vira identidade, não só economia de energia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="areas container" aria-labelledby="areas-titulo">
+      <h2 class="areas-title" id="areas-titulo">Áreas de atuação</h2>
+      <div class="areas-grid"><a class="area-item" href="servicos.html#residencial"><svg class="area-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M6 24 L24 9 L42 24" class="ic-s"/><path d="M11 21 V39 H37 V21" class="ic-s"/><rect x="20" y="27" width="8" height="12" class="ic-a"/></svg><span class="area-name">Residencial</span></a><a class="area-item" href="servicos.html#predial"><svg class="area-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="13" y="7" width="22" height="35" class="ic-s"/><rect x="18" y="13" width="4" height="4" class="ic-f"/><rect x="26" y="13" width="4" height="4" class="ic-f"/><rect x="18" y="21" width="4" height="4" class="ic-f"/><rect x="26" y="21" width="4" height="4" class="ic-f"/><rect x="21" y="32" width="6" height="10" class="ic-a"/></svg><span class="area-name">Predial</span></a><a class="area-item" href="servicos.html#industrial"><svg class="area-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 41 V25 L18 31 V25 L28 31 V25 L38 31 V10 H44 V41 Z" class="ic-s"/><rect x="14" y="35" width="6" height="6" class="ic-a"/><rect x="26" y="35" width="6" height="6" class="ic-f"/></svg><span class="area-name">Industrial</span></a><a class="area-item" href="servicos.html#reforma"><svg class="area-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="7" y="10" width="34" height="30" class="ic-s"/><path d="M7 20 H41 M7 30 H41 M24 10 V20 M16 20 V30 M32 20 V30 M24 30 V40" class="ic-s"/><rect x="25" y="21" width="6" height="8" class="ic-a"/></svg><span class="area-name">Reforma</span></a></div>
+    </section>
+
+    <section class="depoimentos" aria-labelledby="depoimentos-titulo">
+      <div class="container">
+        <h2 class="depoimentos-title" id="depoimentos-titulo">Quem já contratou</h2>
+        <div class="depoimentos-grid">
+          <figure class="depoimento">
+            <p class="depoimento-area">Residencial</p>
+            <blockquote><p>Trocaram a fiação e ficou organizado. A iluminação saiu do jeito que a gente combinou. Qualquer dúvida no meio da obra, eles respondiam.</p></blockquote>
+            <figcaption><strong>Marina</strong>, Itaquaquecetuba</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <p class="depoimento-area">Predial</p>
+            <blockquote><p>A manutenção do prédio entrou no orçamento combinado. O quadro da área comum ficou identificado, dá para ver o que foi feito.</p></blockquote>
+            <figcaption><strong>Carlos</strong>, Poá</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <p class="depoimento-area">Industrial</p>
+            <blockquote><p>O quadro da oficina foi montado para o uso do galpão e testado antes de entregar.</p></blockquote>
+            <figcaption><strong>Roberto</strong>, Suzano</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <p class="depoimento-area">Reforma</p>
+            <blockquote><p>A casa é antiga e a fiação estava misturada. Atualizaram o que precisava, dentro da norma, e não quebraram o que já estava bom.</p></blockquote>
+            <figcaption><strong>Ana</strong>, Ferraz de Vasconcelos</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANO 8 — CTA FINAL -->
+    <section class="scene scene--full scene--center" data-scene>
+      <div class="scene-media">
+        <img
+          src="assets/teste/24-banheiro-perfil-led.webp"
+          srcset="assets/teste/24-banheiro-perfil-led-sm.webp 700w, assets/teste/24-banheiro-perfil-led.webp 787w"
+          sizes="100vw"
+          width="787"
+          height="1400"
+          alt="Banheiro com perfis de LED no forro e espelhos iluminados"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="container">
+        <div class="scene-text reveal">
+          <h2>Pronto para parar de se preocupar com a elétrica?</h2>
+          <p>Fale agora no WhatsApp e receba um orçamento sem compromisso.</p>
+          <div class="scene-actions">
+            <a href="#" data-site-href="wa" class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Chamar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+            <span data-site="name">Ideal Elétrica</span>
+          </a>
+          <p class="lede" data-site="slogan" style="margin-top: var(--space-4);">Projetando • Instalando • Conectando com você</p>
+        </div>
+
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a data-site-href="phone" href="#"><span data-site="phone">[TELEFONE]</span></a></li>
+            <li><a data-site-href="wa" href="#">WhatsApp: <span data-site="whatsappDisplay">[WHATSAPP]</span></a></li>
+            <li><a data-site-href="email" href="#"><span data-site="email">[EMAIL]</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Área de atuação</h3>
+          <p class="text-muted" style="font-size: var(--fs-sm);" data-site="serviceArea">
+            Itaquaquecetuba e toda a Grande São Paulo
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> <span data-site="name">Ideal Elétrica</span>. Todos os direitos reservados.</span>
+        <span>CNPJ: <span data-site="cnpj">[CNPJ]</span> · <span data-site="address">[ENDERECO]</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" data-site-href="wa" class="wa-float" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 720 720" fill="currentColor" aria-hidden="true"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>
+  </a>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/intro.js" defer></script>
+  <script src="assets/js/scroll-cinema.js" defer></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-logo="L3" data-paleta="P1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design System — {{SITE_NAME}} (AV0)</title>
+  <meta name="description" content="Tokens e componentes do design system da Ideal Elétrica — versão AV0." />
+  <meta name="theme-color" content="#121417" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .swatch { border-radius: var(--radius-md); height: 88px; display: flex; align-items: flex-end; padding: var(--space-3); font-size: var(--fs-xs); font-weight: 700; border: 1px solid var(--color-border); }
+    .swatch-label { background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; }
+    .type-row { border-bottom: 1px solid var(--color-border); padding-block: var(--space-5); display: flex; align-items: baseline; gap: var(--space-5); flex-wrap: wrap; }
+    .type-row code { color: var(--color-text-faint); font-size: var(--fs-xs); }
+    .space-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3); }
+    .space-bar { background: var(--color-accent); height: 12px; }
+    .token-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+    .token-table th, .token-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Ideal Elétrica">
+        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g class="lg lg-L1"><rect class="f-a" x="4" y="4" width="56" height="56" rx="6"/><rect class="f-g" x="14" y="14" width="8" height="36"/><path class="f-g" d="M30 14h20v8H38v6h10v8H38v6h12v8H30z"/></g><g class="lg lg-L2"><path class="s-w" d="M8 56V34a10 10 0 0 1 10-10h38"/><path class="s-a" d="M22 56V44a6 6 0 0 1 6-6h28"/><path class="s-w" d="M36 56V52a2 2 0 0 1 2-2h18"/><path class="s-w" d="M8 10h48"/></g><g class="lg lg-L3"><path class="f-w" d="M17.29 18.08V12.74H22.9V18.08ZM17.29 46V21.8H22.9V46Z M36.28 46.55Q32.41 46.55 29.84 45.2Q27.26 43.84 25.98 41.03Q24.69 38.23 24.69 33.9Q24.69 29.53 25.98 26.75Q27.26 23.97 29.84 22.61Q32.41 21.25 36.28 21.25Q39.78 21.25 42.14 22.56Q44.51 23.87 45.71 26.59Q46.91 29.3 46.91 33.63V35.28H30.44Q30.53 37.54 31.13 39.08Q31.73 40.62 32.99 41.38Q34.26 42.14 36.33 42.14Q37.38 42.14 38.3 41.86Q39.22 41.58 39.91 41.01Q40.6 40.43 40.99 39.56Q41.39 38.69 41.39 37.54H46.91Q46.91 39.84 46.1 41.54Q45.3 43.24 43.85 44.34Q42.4 45.45 40.47 46Q38.53 46.55 36.28 46.55ZM30.53 31.33H41.06Q41.06 29.81 40.72 28.75Q40.37 27.69 39.75 27Q39.13 26.31 38.26 26.01Q37.38 25.71 36.28 25.71Q34.48 25.71 33.27 26.31Q32.05 26.91 31.4 28.15Q30.76 29.39 30.53 31.33Z"/><circle class="f-a" cx="54" cy="42" r="5"/></g><g class="lg lg-L4"><circle class="f-a" cx="14" cy="18" r="8"/><circle class="f-w" cx="50" cy="46" r="8"/><path class="s-w s-round" d="M14 26C14 44 50 20 50 38"/></g></svg>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <a href="design-system.html" class="btn btn-outline btn-sm nav-cta">Design System</a>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <main id="conteudo">
+    <div class="page-header container">
+      <span class="eyebrow">Design System · AV0</span>
+      <h1>Tokens e componentes</h1>
+      <p class="lede">
+        Referência viva do que existe hoje. Tudo aqui lê as variáveis de <code>assets/css/tokens.css</code> —
+        trocar marca, cor ou fonte lá reflete em todo o site.
+      </p>
+    </div>
+
+    <!-- CORES -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Cor</span><h2>Paleta base</h2></div>
+      <div class="grid grid-4">
+        <div class="swatch" style="background:#0B0B0B;"><span class="swatch-label">--color-bg #0B0B0B</span></div>
+        <div class="swatch" style="background:#141414;"><span class="swatch-label">--color-bg-elevated #141414</span></div>
+        <div class="swatch" style="background:#1C1C1C;"><span class="swatch-label">--color-surface #1C1C1C</span></div>
+        <div class="swatch" style="background:#2E2E2E;"><span class="swatch-label">--color-border #2E2E2E</span></div>
+        <div class="swatch" style="background:#FFC400; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-accent #FFC400</span></div>
+        <div class="swatch" style="background:#D9A800; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-accent-dark #D9A800</span></div>
+        <div class="swatch" style="background:#F5F5F2; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-text #F5F5F2</span></div>
+        <div class="swatch" style="background:#868682; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-text-faint #868682</span></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Tipografia</span><h2>Display + corpo de texto</h2>
+        <p class="lede">Uma família só: <strong>Archivo Variable</strong> (self-hosted, SIL OFL). Títulos em peso 800 e largura <code>"wdth" 112</code>; corpo em 400, largura <code>"wdth" 100</code>, 17px / 1,6. Títulos em sentence case.</p>
+      </div>
+
+      <div class="type-row"><h1 style="font-size: var(--fs-3xl);">Aa Título 3XL</h1><code>--fs-3xl / h1</code></div>
+      <div class="type-row"><h2 style="font-size: var(--fs-2xl);">Aa Título 2XL</h2><code>--fs-2xl / h2</code></div>
+      <div class="type-row"><h3 style="font-size: var(--fs-xl);">Aa Título XL</h3><code>--fs-xl / h3</code></div>
+      <div class="type-row"><h4 style="font-size: var(--fs-md);">Aa Título MD</h4><code>--fs-md / h4</code></div>
+      <div class="type-row"><p style="font-size: var(--fs-base); font-family: var(--font-body);">Texto base (Archivo, largura 100) para parágrafos e leitura longa.</p><code>--fs-base / body</code></div>
+      <div class="type-row"><p style="font-size: var(--fs-sm); font-family: var(--font-body);" class="text-muted">Texto pequeno para legendas e metadados.</p><code>--fs-sm</code></div>
+    </section>
+
+    <!-- ESPAÇAMENTO -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Espaçamento</span><h2>Escala base 4px</h2></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-1</span><div class="space-bar" style="width: var(--space-1);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-2</span><div class="space-bar" style="width: var(--space-2);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-3</span><div class="space-bar" style="width: var(--space-3);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-4</span><div class="space-bar" style="width: var(--space-4);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-5</span><div class="space-bar" style="width: var(--space-5);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-6</span><div class="space-bar" style="width: var(--space-6);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-7</span><div class="space-bar" style="width: var(--space-7);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-8</span><div class="space-bar" style="width: var(--space-8);"></div></div>
+    </section>
+
+    <!-- RAIOS E SOMBRAS -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Raios e sombras</span><h2>Profundidade</h2></div>
+      <div class="grid grid-4">
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-sm); align-items:center; justify-content:center;">radius-sm</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-md); align-items:center; justify-content:center;">radius-md</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-lg); align-items:center; justify-content:center;">radius-lg</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-pill); align-items:center; justify-content:center;">radius-pill</div>
+      </div>
+      <div class="grid grid-3" style="margin-top: var(--space-6);">
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-sm); align-items:center; justify-content:center;">shadow-sm</div>
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-md); align-items:center; justify-content:center;">shadow-md</div>
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-glow); align-items:center; justify-content:center;">shadow-glow</div>
+      </div>
+    </section>
+
+    <!-- BOTÕES -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Componentes</span><h2>Botões</h2></div>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-primary">Primário</button>
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-primary btn-sm">Primário SM</button>
+      </div>
+      <p class="text-muted" style="margin-block: var(--space-6) var(--space-4); font-size: var(--fs-sm);">Com ícone: WhatsApp à esquerda no primário, seta à direita no secundário. Raio próprio de 10px (8px no compacto); cards, fotos e campos seguem no canto pequeno.</p>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Primário</button>
+        <button class="btn btn-outline">Outline<svg class="btn-icon btn-icon--end" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h11.5M11 5.5l4.5 4.5-4.5 4.5"/></svg></button>
+        <button class="btn btn-ghost">Ghost<svg class="btn-icon btn-icon--end" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h11.5M11 5.5l4.5 4.5-4.5 4.5"/></svg></button>
+        <button class="btn btn-primary btn-sm"><svg class="btn-icon" viewBox="0 0 720 720" fill="currentColor" aria-hidden="true" focusable="false"><path d="M360,0C161.18,0,0,161.18,0,360c0,65.41,17.45,126.75,47.94,179.61L0,720l187.02-44.21c51.34,28.18,110.28,44.21,172.98,44.21,198.82,0,360-161.18,360-360S558.82,0,360,0ZM360,655.52c-60.17,0-116.13-17.98-162.82-48.87l-110.49,28.14,30.99-105.61c-33.53-47.93-53.2-106.26-53.2-169.19,0-163.21,132.31-295.52,295.52-295.52s295.52,132.31,295.52,295.52-132.31,295.52-295.52,295.52Z"/><path d="M444.35,407.52l87.1,41.06c4,1.88,6.56,5.94,6.2,10.34-.94,11.46-5.54,34.43-26.13,55.02-58.12,58.12-162.49-7.64-166.74-10.18-25.67-13.79-50.06-32.24-73.19-55.36-23.12-23.12-41.58-47.52-55.37-73.19-2.55-4.24-68.31-108.61-10.18-166.74,20.59-20.59,43.56-25.19,55.02-26.13,4.41-.36,8.46,2.2,10.34,6.2l41.07,87.1c1.94,4.12,1.09,9.02-2.13,12.24l-30.61,30.61c-6.62,6.62-8.56,16.93-4,25.11,11.17,20.03,26.19,39.32,43.59,57.07,17.75,17.4,37.04,32.43,57.07,43.59,8.18,4.56,18.48,2.62,25.11-4l30.61-30.61c3.22-3.22,8.12-4.08,12.24-2.13Z"/></svg>Primário SM</button>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="section container">
+      <div class="section-head"><h2>Badges</h2></div>
+      <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <span class="badge">Residencial</span>
+        <span class="badge">Predial</span>
+        <span class="badge">Industrial</span>
+        <span class="badge">Reforma</span>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section class="section container">
+      <div class="section-head"><h2>Card de serviço</h2></div>
+      <div class="grid grid-3">
+        <article class="card">
+          <img class="card-icon" src="assets/img/icon-residential.svg" alt="" />
+          <h3>Título do serviço</h3>
+          <p>Descrição curta explicando o benefício principal do serviço para o cliente.</p>
+          <a class="card-link" href="#">Saiba mais →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section container">
+      <div class="section-head"><h2>Campos de formulário</h2></div>
+      <div class="form-grid" style="max-width: 480px;">
+        <div class="field"><label for="ds-nome">Rótulo do campo</label><input type="text" id="ds-nome" placeholder="Texto de exemplo" /></div>
+        <div class="field"><label for="ds-select">Select</label><select id="ds-select"><option>Opção A</option></select></div>
+        <button class="btn btn-primary btn-block">Botão de envio</button>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTO -->
+    <section class="section container">
+      <div class="section-head"><h2>Card de depoimento</h2></div>
+      <div class="grid grid-3">
+        <article class="testimonial">
+          <blockquote>"Texto de depoimento placeholder."</blockquote>
+          <div class="testimonial-author">
+            <img src="assets/img/avatar-placeholder.svg" alt="" />
+            <div><strong>[NOME]</strong><span>[CARGO/CIDADE]</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container">
+      <div class="section-head"><h2>FAQ (accordion nativo, sem JS)</h2></div>
+      <div style="max-width: 640px;">
+        <details class="faq-item" open><summary>Pergunta de exemplo</summary><p>Resposta de exemplo usando o elemento nativo &lt;details&gt;.</p></details>
+        <details class="faq-item"><summary>Outra pergunta</summary><p>Outra resposta de exemplo.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="section container">
+      <div class="section-head"><h2>Faixa de CTA</h2></div>
+      <div class="cta-band">
+        <h2>Texto de chamada para ação</h2>
+        <a href="#" class="btn btn-primary">Botão</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>Design System AV0 — não é página pública final.</span>
+        <a href="index.html">Voltar para a Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
