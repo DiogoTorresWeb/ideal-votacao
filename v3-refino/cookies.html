@@ -92,13 +92,13 @@
 
         <section>
           <h2>3. Analítica e marketing (só com o seu consentimento)</h2>
-          <p>O site está preparado para as ferramentas abaixo. <strong>Cada uma só é carregada quando o responsável configura o identificador e você aceita a categoria.</strong> Se a ferramenta ainda não tiver ID, ela não carrega.</p>
+          <p>O site está preparado para as ferramentas abaixo, com o Consent Mode v2. <strong>Cada uma só é carregada quando o responsável preenche o identificador e você aceita a categoria correspondente.</strong> Identificador vazio ou ainda entre colchetes: a ferramenta não carrega, mesmo se você aceitar. Hoje os identificadores ainda não foram preenchidos; aceitar o aviso só guarda a sua escolha.</p>
           <dl class="legal-ficha">
             <div><dt>Necessários</dt><dd>Os itens do item 2, sempre ativos.</dd></div>
-            <div><dt>Analítica</dt><dd>Google Analytics 4 (cookies típicos <code>_ga</code>, <code>_ga_*</code>, até 2 anos). Finalidade: contar visitas, entender o uso do site e melhorá-lo.</dd></div>
-            <div><dt>Marketing</dt><dd>Google Ads e Pixel da Meta (cookies típicos <code>_gcl_*</code>, <code>_fbp</code>, <code>_fbc</code>, prazos definidos por cada provedor, em geral de 90 dias a 2 anos). Finalidade: medir campanhas e, se você aceitar, apoiar anúncios. Nome, telefone e e-mail não são enviados.</dd></div>
+            <div><dt>Analítica</dt><dd>Google Analytics 4, operado pela Google LLC (cookies típicos <code>_ga</code>, <code>_ga_*</code>, até 2 anos). Finalidade: contar visitas, entender o uso do site e melhorá-lo. Só liga com o consentimento de analítica.</dd></div>
+            <div><dt>Marketing</dt><dd>Google Ads, operado pela Google LLC (cookies típicos <code>_gcl_*</code>, prazos definidos pelo provedor, em geral até 90 dias), e Pixel da Meta, operado pela Meta Platforms (cookies típicos <code>_fbp</code>, <code>_fbc</code>, em geral até 90 dias). Finalidade: medir campanhas e, se você aceitar, apoiar anúncios. Só ligam com o consentimento de marketing.</dd></div>
           </dl>
-          <p>Os eventos previstos são de uso: cliques no WhatsApp e no telefone, e o envio do formulário de orçamento. <span class="legal-pend">[Pendente: confirmar quais ferramentas serão ligadas e ajustar esta tabela aos IDs ativos.]</span></p>
+          <p>Os eventos previstos são de uso, nunca de identificação: clique no WhatsApp, clique no telefone e envio do formulário de orçamento. Nome, telefone, e-mail e o texto da mensagem não são enviados a essas ferramentas.</p>
           <p>Você muda a decisão a qualquer momento: <a href="index.html?cookies=1">Preferências de cookies</a>.</p>
         </section>
 
@@ -182,6 +182,7 @@
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/consent.js"></script>
+  <script src="assets/js/measure.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

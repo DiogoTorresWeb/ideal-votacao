@@ -26,4 +26,12 @@ window.SITE_CONFIG = {
   policyDate: "[DATA DA VERSÃO]",
   dpo: "[ENCARREGADO, se houver]",
   photoSource: "[TITULARIDADE DAS FOTOS]",
+  /* Medição. Deixe entre [colchetes] até ter o ID real — ver MEDICAO.md.
+     Sem ID válido a ferramenta não carrega, mesmo se o visitante aceitar. */
+  measurement: {
+    ga4: "[GA4_MEASUREMENT_ID]",
+    googleAds: "[GOOGLE_ADS_ID]",
+    googleAdsLabel: "[GOOGLE_ADS_CONVERSION_LABEL]",
+    metaPixel: "[META_PIXEL_ID]",
+  },
 };

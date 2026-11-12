@@ -99,9 +99,14 @@
 
         <section>
           <h2>4. Medição do uso do site (só com o seu consentimento)</h2>
-          <p>O site está preparado para medir visitas e campanhas com Google Analytics 4, Google Ads e o Pixel da Meta, com o Consent Mode v2. <strong>Essas ferramentas nascem desligadas.</strong> Só são carregadas se (1) o responsável configurar o identificador de cada uma e (2) você tiver aceitado a categoria correspondente no aviso de cookies.</p>
-          <p>Os eventos previstos são de uso, não de identificação: cliques no WhatsApp e no telefone, e o envio do formulário. Nome, telefone e e-mail não são enviados a essas ferramentas. Se você não aceitar, nada disso é carregado. Você pode mudar a escolha quando quiser em <a href="index.html?cookies=1">Preferências de cookies</a>. O detalhe está na <a href="cookies.html">Política de Cookies</a>.</p>
-          <p><span class="legal-pend">[Pendente: confirmar quais ferramentas serão ligadas, os operadores e as transferências internacionais — Google e Meta.]</span></p>
+          <p>O site está preparado para medir visitas e campanhas com três ferramentas, todas desligadas por padrão e ligadas ao aviso de cookies (Consent Mode v2):</p>
+          <ul>
+            <li><strong>Google Analytics 4</strong> (Google LLC), só com o consentimento de analítica: contar visitas e entender o uso do site.</li>
+            <li><strong>Google Ads</strong> (Google LLC), só com o consentimento de marketing: medir campanhas de anúncio.</li>
+            <li><strong>Pixel da Meta</strong> (Meta Platforms), só com o consentimento de marketing: medir campanhas e, se você aceitar, apoiar anúncios.</li>
+          </ul>
+          <p><strong>Nenhuma delas é carregada</strong> até o responsável preencher o identificador e você aceitar a categoria correspondente. Se o identificador ainda estiver vazio, aceitar o aviso não carrega ferramenta nenhuma.</p>
+          <p>Os eventos previstos são de uso, não de identificação: cliques no WhatsApp e no telefone, e o envio do formulário. Nome, telefone, e-mail e o texto da mensagem não são enviados a essas ferramentas. Se você não aceitar, nada disso é carregado. Você pode mudar a escolha quando quiser em <a href="index.html?cookies=1">Preferências de cookies</a>. O detalhe das cookies e dos prazos está na <a href="cookies.html">Política de Cookies</a>.</p>
         </section>
 
         <section>
@@ -218,6 +223,7 @@
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/consent.js"></script>
+  <script src="assets/js/measure.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
