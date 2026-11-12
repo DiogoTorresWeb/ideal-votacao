@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Votação de logo e paleta — Ideal Elétrica</title>
+  <title>Votação de fontes e hero — Ideal Elétrica</title>
   <link rel="preload" href="assets/fonts/archivo-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face {
@@ -217,27 +217,29 @@
       <div class="bar-top">
         <div class="intro">
           <p class="kicker">Votação no site de verdade</p>
-          <p class="combo" id="combo" aria-live="polite">«L1 + P1»</p>
-          <p class="hint">Esta é a home atual, com as fotos e as fontes novas. Troque logo e paleta abaixo e veja o site inteiro mudar. Responda com a combinação escolhida, por exemplo «L2 + P3».</p>
+          <p class="combo" id="combo" aria-live="polite">«F1 + H1»</p>
+          <p class="hint">Esta é a home atual. Logo L3 e paleta P1 estão fixas. Troque o par de fontes e a hero (título e subtítulo) e veja a home mudar ao vivo. Responda com a combinação, por exemplo «F2 + H3».</p>
         </div>
       </div>
       <div class="controls">
         <fieldset>
-          <legend>Logo</legend>
-          <div class="seg" id="logos" role="group" aria-label="Logo">
-            <button type="button" data-logo="L1" aria-pressed="true">L1</button>
-            <button type="button" data-logo="L2" aria-pressed="false">L2</button>
-            <button type="button" data-logo="L3" aria-pressed="false">L3</button>
-            <button type="button" data-logo="L4" aria-pressed="false">L4</button>
+          <legend>Fonte</legend>
+          <div class="seg" id="fontes" role="group" aria-label="Par de fontes">
+            <button type="button" data-fonte="F1" aria-pressed="true">F1 Archivo</button>
+            <button type="button" data-fonte="F2" aria-pressed="false">F2 Space Grotesk</button>
+            <button type="button" data-fonte="F3" aria-pressed="false">F3 Newsreader</button>
+            <button type="button" data-fonte="F4" aria-pressed="false">F4 Outfit</button>
           </div>
         </fieldset>
         <fieldset>
-          <legend>Paleta</legend>
-          <div class="seg" id="paletas" role="group" aria-label="Paleta">
-            <button type="button" data-paleta="P1" aria-pressed="true">P1</button>
-            <button type="button" data-paleta="P2" aria-pressed="false">P2</button>
-            <button type="button" data-paleta="P3" aria-pressed="false">P3</button>
-            <button type="button" data-paleta="P4" aria-pressed="false">P4</button>
+          <legend>Hero</legend>
+          <div class="seg" id="heroes" role="group" aria-label="Título e subtítulo da hero">
+            <button type="button" data-hero="H1" aria-pressed="true">H1 atual</button>
+            <button type="button" data-hero="H2" aria-pressed="false">H2</button>
+            <button type="button" data-hero="H3" aria-pressed="false">H3</button>
+            <button type="button" data-hero="H4" aria-pressed="false">H4</button>
+            <button type="button" data-hero="H5" aria-pressed="false">H5</button>
+            <button type="button" data-hero="H6" aria-pressed="false">H6</button>
           </div>
         </fieldset>
         <button type="button" class="btn-full" id="btn-full" aria-pressed="false">Tela cheia</button>
@@ -255,18 +257,50 @@
       var comboEl = document.getElementById("combo");
       var btnFull = document.getElementById("btn-full");
       var shell = document.getElementById("shell");
-      var logo = "L1";
-      var paleta = "P1";
+      var fonte = "F1";
+      var hero = "H1";
+      var FONTES = {
+        F1: "Archivo",
+        F2: "Space Grotesk",
+        F3: "Newsreader",
+        F4: "Outfit"
+      };
+      var HEROES = {
+        H1: {
+          title: "Elétrica que protege sua casa, <em>não só liga a luz</em>",
+          lede: "Instalação, manutenção e projetos elétricos para residências e empresas, dentro da norma, em toda a Grande São Paulo."
+        },
+        H2: {
+          title: "Instalação elétrica para residência e empresa, dentro da norma",
+          lede: "Manutenção e projetos em Itaquaquecetuba e em toda a Grande São Paulo."
+        },
+        H3: {
+          title: "Elétrica de casa e de prédio, em toda a Grande São Paulo",
+          lede: "Instalação, manutenção e projetos, do quadro à iluminação, feitos dentro da norma."
+        },
+        H4: {
+          title: "Quadro, fiação e iluminação no lugar certo",
+          lede: "Serviço de instalação, manutenção e projeto para casa e empresa, em toda a Grande São Paulo."
+        },
+        H5: {
+          title: "De Itaquaquecetuba para toda a Grande São Paulo",
+          lede: "Instalação, manutenção e projetos elétricos para residências e empresas, dentro da norma."
+        },
+        H6: {
+          title: "Serviço elétrico para a casa, o prédio e a reforma",
+          lede: "Instalação e manutenção dentro da norma, com orçamento combinado, na Grande São Paulo."
+        }
+      };
 
       function parseHash() {
-        var m = (location.hash || "").match(/L([1-4])\s*\+\s*P([1-4])/i);
+        var m = (location.hash || "").match(/F([1-4])\s*\+\s*H([1-6])/i);
         if (!m) return;
-        logo = "L" + m[1];
-        paleta = "P" + m[2];
+        fonte = "F" + m[1];
+        hero = "H" + m[2];
       }
 
       function syncHash() {
-        var next = logo + "+" + paleta;
+        var next = fonte + "+" + hero;
         if ((location.hash || "").replace(/^#/, "") !== next) {
           history.replaceState(null, "", "#" + next);
         }
@@ -279,16 +313,27 @@
       }
 
       function applyAttrs() {
-        comboEl.textContent = "«" + logo + " + " + paleta + "»";
-        setPressed(document.getElementById("logos"), "data-logo", logo);
-        setPressed(document.getElementById("paletas"), "data-paleta", paleta);
+        comboEl.textContent = "«" + fonte + " + " + hero + "»";
+        var hint = document.querySelector(".hint");
+        if (hint) {
+          var plain = HEROES[hero].title.replace(/<[^>]+>/g, "");
+          hint.textContent = "Fonte: " + FONTES[fonte] + ". Hero: “" + plain + "”. Logo L3 e paleta P1 estão fixas. Responda com a combinação, por exemplo «F2 + H3».";
+        }
+        setPressed(document.getElementById("fontes"), "data-fonte", fonte);
+        setPressed(document.getElementById("heroes"), "data-hero", hero);
         syncHash();
         try {
           var doc = iframe.contentDocument;
           if (!doc) return;
           try { doc.defaultView.sessionStorage.setItem("ie_intro_seen", "1"); } catch (e) {}
-          doc.documentElement.setAttribute("data-logo", logo);
-          doc.documentElement.setAttribute("data-paleta", paleta);
+          doc.documentElement.setAttribute("data-logo", "L3");
+          doc.documentElement.setAttribute("data-paleta", "P1");
+          doc.documentElement.setAttribute("data-fonte", fonte);
+          doc.documentElement.setAttribute("data-hero", hero);
+          var titleEl = doc.querySelector(".hero-title");
+          var ledeEl = doc.querySelector(".hero .lede");
+          if (titleEl) titleEl.innerHTML = HEROES[hero].title;
+          if (ledeEl) ledeEl.textContent = HEROES[hero].lede;
         } catch (e) {}
       }
 
@@ -345,16 +390,16 @@
       iframe.addEventListener("load", applyAttrs);
       applyAttrs();
 
-      document.getElementById("logos").addEventListener("click", function (ev) {
-        var btn = ev.target.closest("[data-logo]");
+      document.getElementById("fontes").addEventListener("click", function (ev) {
+        var btn = ev.target.closest("[data-fonte]");
         if (!btn) return;
-        logo = btn.getAttribute("data-logo");
+        fonte = btn.getAttribute("data-fonte");
         applyAttrs();
       });
-      document.getElementById("paletas").addEventListener("click", function (ev) {
-        var btn = ev.target.closest("[data-paleta]");
+      document.getElementById("heroes").addEventListener("click", function (ev) {
+        var btn = ev.target.closest("[data-hero]");
         if (!btn) return;
-        paleta = btn.getAttribute("data-paleta");
+        hero = btn.getAttribute("data-hero");
         applyAttrs();
       });
 

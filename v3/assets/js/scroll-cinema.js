@@ -1,7 +1,8 @@
 /**
- * "Filme" da rolagem da home: GSAP + ScrollTrigger (scrub, sem pin) e
- * Lenis para suavizar. Só roda se prefers-reduced-motion estiver
- * desligado e as bibliotecas carregarem (CDN pode falhar offline).
+ * "Filme" da rolagem da home: GSAP + ScrollTrigger (scrub, sem pin).
+ * A rolagem em si é a nativa do navegador (sem Lenis nem listener de wheel).
+ * Só roda se prefers-reduced-motion estiver desligado e as bibliotecas
+ * carregarem (CDN pode falhar offline).
  * Sem motion, cada .reveal já é visível por padrão (ver base.css) —
  * a visibilidade nunca depende de JavaScript rodar com sucesso.
  */
@@ -17,15 +18,6 @@
 
   html.classList.add("js", "motion");
   gsap.registerPlugin(ScrollTrigger);
-
-  if (typeof window.Lenis !== "undefined") {
-    var lenis = new Lenis({ lerp: 0.14, wheelMultiplier: 1, smoothTouch: false });
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add(function (time) {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-  }
 
   document.querySelectorAll("[data-scene]").forEach(function (scene) {
     var reveals = scene.querySelectorAll(".reveal");

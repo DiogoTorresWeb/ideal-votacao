@@ -7,10 +7,10 @@
      2) BASE       — reset e tipografia
      3) COMPONENTES — header, hero, botões, cards, formulário, footer
 
-   Logo e paleta (AV3.1): troque só os dois atributos da linha <html>
-   de cada página — data-logo="L1".."L4" e data-paleta="P1".."P4".
-   Sem JavaScript. Os blocos de cada opção estão no fim deste arquivo
-   (seção 4). Padrão: L1 + P1 (visual do AV3).
+   Logo e paleta (AV3.1): o padrão fixo é L3 + P1. A votação continua
+   trocando só os dois atributos da linha <html> de cada página
+   (data-logo="L1".."L4" e data-paleta="P1".."P4"). Sem JavaScript.
+   Os blocos de cada opção estão no fim deste arquivo (seção 4).
    ============================================================ */
 
 /* Archivo Variable (Google Fonts, SIL OFL), mesmos arquivos que a Konk usa.
@@ -33,6 +33,72 @@
   font-display: swap;
   src: url("../fonts/archivo-variable-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Pares de fonte da votação (F2–F4). Só baixam se html[data-fonte] as usar. SIL OFL, self-hosted. */
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-latin-ext-400700.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-latin-400700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/newsreader-latin-ext-400800.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/newsreader-latin-400800.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/source-sans-3-latin-ext-400700.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/source-sans-3-latin-400700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/outfit-latin-ext-400800.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/outfit-latin-400800.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
@@ -68,6 +134,32 @@
   --font-display: "Archivo", "Arial Narrow", sans-serif;
   --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
 
+/* Pares da votação. F1 = o padrão (Archivo), já definido acima. */
+html[data-fonte="F2"] {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+}
+html[data-fonte="F3"] {
+  --font-display: "Newsreader", "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+}
+html[data-fonte="F4"] {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+html[data-fonte="F2"] body,
+html[data-fonte="F3"] body,
+html[data-fonte="F4"] body,
+html[data-fonte="F2"] .brand,
+html[data-fonte="F3"] .brand,
+html[data-fonte="F4"] .brand {
+  font-variation-settings: normal;
+}
+html[data-fonte="F3"] :is(h1, h2, h3, .hero-title, .brand, .intro-word-inner) {
+  font-variation-settings: "opsz" 72;
+  font-weight: 650;
+}
+
   --fs-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8125rem);
   --fs-sm: clamp(0.875rem, 0.84rem + 0.15vw, 0.9375rem);
   --fs-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem); /* chega a 17px, como a Konk */
@@ -101,6 +193,9 @@
   --radius-sm: 2px;
   --radius-md: 3px;
   --radius-lg: 4px;
+  /* Botão tem raio próprio: o canto de 3px deixava o botão com cara de caixa. */
+  --radius-btn: 10px;
+  --radius-btn-sm: 8px;
 
   /* ---- Sombras (tingidas na cor da tinta, nunca preto puro) ---- */
   --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
@@ -202,6 +297,16 @@ h4 {
   font-variation-settings: "wdth" 112;
   line-height: var(--lh-tight);
   letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
 }
 
 h1 {
@@ -300,7 +405,12 @@ button {
 .lede {
   font-size: var(--fs-md);
   color: var(--color-text-muted);
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
+  /* medida de leitura: em servicos.html a linha passava de 120 caracteres */
+  max-width: 60ch;
+}
+.section-head.center .lede {
+  margin-inline: auto;
 }
 
 .text-muted {
@@ -362,73 +472,170 @@ html.force-visible .reveal {
    depoimentos, faq, footer
    ============================================================ */
 
-/* ---- Botões ---- */
+/* ---- Botões ----
+   Padrão de componente premium (anatomia do botão do Geist/Vercel e do
+   Stripe): altura fixa em vez de padding solto, raio próprio de 10px
+   (cards, fotos e campos seguem no canto pequeno), peso 650, realce interno
+   de 1px no primário, hover com brilho + 1px de elevação, active com
+   "press" curto e anel de foco duplo (folga na cor do fundo + anel).
+   Contraste: #121417 sobre #ffcc00 = 12,6:1 (AA e AAA). */
 .btn {
+  --btn-h: 52px;
+  --btn-px: 1.5rem;
+  --btn-radius: var(--radius-btn);
+  --btn-ring: var(--color-text);
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-md);
-  font-weight: 700;
-  font-size: 1.1875rem;
-  border: 2px solid transparent;
-  transition: transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast), border-color var(--t-fast);
+  gap: 0.625rem;
+  min-height: var(--btn-h);
+  padding: 0 var(--btn-px);
+  border-radius: var(--btn-radius);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
   white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 160ms var(--ease-out),
+    box-shadow 200ms var(--ease-out),
+    background-color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out),
+    color 160ms var(--ease-out);
+}
+
+.btn-icon {
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+  margin-inline-start: -0.125rem;
+}
+.btn-icon--end {
+  margin-inline: 0 -0.25rem;
+  transition: transform 200ms var(--ease-out);
+}
+
+.btn:focus-visible {
+  /* outline transparente mantém o anel no modo de alto contraste do Windows */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--btn-ring);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 80ms;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+  }
+  .btn:hover .btn-icon--end {
+    transform: translateX(3px);
+  }
+  .btn:active {
+    transform: translateY(0) scale(0.97);
   }
 }
-.btn:active {
-  transform: translateY(0) scale(0.98);
-}
 
+/* Primário: amarelo sólido, realce interno no topo e sombra com deslocamento */
 .btn-primary {
   background: var(--color-accent);
   color: var(--color-on-accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .btn-primary:hover {
   background: var(--color-accent-strong);
-  box-shadow: var(--shadow-md);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+    0 6px 18px -6px rgba(0, 0, 0, 0.55);
+}
+.btn-primary:active {
+  background: var(--color-accent);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+.btn-primary:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 0 0 2px var(--color-bg),
+    0 0 0 4px var(--btn-ring);
 }
 
+/* Outline: contorno de 1px, véu claro no hover */
 .btn-outline {
-  background: transparent;
+  background: rgba(244, 241, 234, 0.02);
   border-color: var(--color-border-strong);
   color: var(--color-text);
+  --btn-ring: var(--color-accent);
 }
 .btn-outline:hover {
-  background: rgba(244, 241, 234, 0.08);
+  background: rgba(244, 241, 234, 0.07);
+  border-color: rgba(244, 241, 234, 0.42);
+}
+.btn-outline:active {
+  background: rgba(244, 241, 234, 0.1);
 }
 
+/* Ghost: sem contorno, só o véu aparece na interação */
 .btn-ghost {
   background: transparent;
-  border-color: var(--color-border-strong);
   color: var(--color-text);
+  --btn-ring: var(--color-accent);
 }
 .btn-ghost:hover {
-  border-color: var(--color-accent);
+  background: rgba(244, 241, 234, 0.07);
+}
+.btn-ghost:active {
+  background: rgba(244, 241, 234, 0.11);
 }
 
 .btn-block {
   width: 100%;
 }
 
+/* Compacto (cabeçalho): 40px de altura, raio menor na mesma família */
 .btn-sm {
-  padding: var(--space-2) var(--space-4);
+  --btn-h: 40px;
+  --btn-px: 1rem;
+  --btn-radius: var(--radius-btn-sm);
+  gap: 0.5rem;
   font-size: var(--fs-sm);
 }
 
-/* CTA compacto do cabeçalho: tinta sólida, não o acento (laranja/amarelo
-   só tem contraste garantido em texto grande/negrito, ver seção TOKENS acima). */
-.nav-cta.btn-primary {
+/* P4: superfície clara não leva amarelo de fundo; o primário vira tinta
+   escura. Nas faixas escuras (header, hero, menu, CTA, rodapé) volta o amarelo. */
+html[data-paleta="P4"] .btn-primary {
+  background: #121417;
+  color: #f4f1ea;
+}
+html[data-paleta="P4"] .btn-primary:hover {
+  background: #2a2f36;
+}
+html[data-paleta="P4"] .btn-outline:hover,
+html[data-paleta="P4"] .btn-ghost:hover {
+  background: rgba(18, 20, 23, 0.06);
+  border-color: var(--color-border-strong);
+}
+html[data-paleta="P4"] :is(.btn-outline, .btn-ghost) {
+  --btn-ring: var(--color-text);
+}
+html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band, .footer) .btn-primary {
   background: var(--color-accent);
   color: var(--color-on-accent);
 }
-.nav-cta.btn-primary:hover {
+html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band, .footer) .btn-primary:hover {
   background: var(--color-accent-strong);
 }
 
@@ -441,8 +648,10 @@ html.force-visible .reveal {
   display: flex;
   align-items: center;
   background: var(--color-bg);
-  border-bottom: 1px solid transparent;
-  transition: box-shadow var(--t-base), border-color var(--t-base);
+  /* Sem border-bottom: a linha de 1px (mesmo transparente) marcava
+     o fim do header e impedia que ele parecesse flutuar sobre a hero. */
+  border-bottom: 0;
+  transition: box-shadow var(--t-base), background-color var(--t-base);
 }
 
 /* Home: header transparente sobre a hero; vira sólido ao sair dela */
@@ -450,7 +659,7 @@ html.force-visible .reveal {
   margin-bottom: calc(-1 * var(--header-h));
   background: linear-gradient(180deg, rgba(11, 12, 14, 0.7), rgba(11, 12, 14, 0));
   color: var(--color-white);
-  transition: background-color var(--t-base), color var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+  transition: background-color var(--t-base), color var(--t-base), box-shadow var(--t-base);
 }
 .header--over .nav-toggle-bars span {
   background: var(--color-white);
@@ -464,8 +673,8 @@ html.force-visible .reveal {
 }
 
 .header.is-scrolled {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-sm);
+  /* Sem filete de borda: só um véu de sombra bem suave, se houver. */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .header .container {
@@ -608,17 +817,20 @@ html.force-visible .reveal {
 .mobile-menu .btn-primary {
   align-self: flex-start;
   max-width: 100%;
-  box-sizing: border-box;
-  font-size: 1.1875rem;
+  /* não herda o --fs-2xl dos links do menu: em 375px estourava a largura */
+  font-size: var(--fs-md);
   border-bottom: none;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity var(--t-slow), transform var(--t-slow);
-  transition-delay: 260ms;
+  transition: opacity var(--t-slow), transform var(--t-slow), background-color 160ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  transition-delay: 260ms, 260ms, 0s, 0s;
 }
 .mobile-menu.is-open .btn-primary {
   opacity: 1;
   transform: translateY(0);
+}
+.mobile-menu.is-open .btn-primary:active {
+  transform: scale(0.97);
 }
 
 .mobile-menu-close {
@@ -698,26 +910,40 @@ html.force-visible .reveal {
 }
 
 .hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-5);
+  display: block;
   margin-top: var(--space-7);
-  padding-top: var(--space-6);
-  border-top: 1px solid rgba(244, 241, 234, 0.22);
+  padding-top: var(--space-5);
+  max-width: 38rem;
+  border-top: none;
+  box-shadow: inset 0 1px 0 rgba(244, 241, 234, 0.28);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  color: rgba(244, 241, 234, 0.82);
 }
 
 .hero-trust-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--fs-sm);
-  color: rgba(244, 241, 234, 0.86);
+  display: inline;
+}
+
+.hero-trust-item + .hero-trust-item::before {
+  content: "  ·  ";
+  color: var(--color-accent-amarelo);
+  font-weight: 700;
+  white-space: pre;
 }
 
 .hero-trust-item img {
-  width: 18px;
-  height: 18px;
+  display: none;
 }
+
+@media (max-width: 1023px) {
+  .hero-trust {
+    padding-right: 4.5rem; /* folga para o botão flutuante do WhatsApp */
+  }
+}
+
 
 .hero .eyebrow {
   color: rgba(244, 241, 234, 0.86);
@@ -726,12 +952,15 @@ html.force-visible .reveal {
   background: var(--color-accent-amarelo);
 }
 
+/* Sobre a foto o contorno precisa de mais corpo e um véu para ler */
 .hero .btn-outline {
-  border-color: rgba(244, 241, 234, 0.55);
+  border-color: rgba(244, 241, 234, 0.5);
+  background: rgba(11, 12, 14, 0.28);
   color: var(--color-white);
 }
 .hero .btn-outline:hover {
-  background: rgba(244, 241, 234, 0.1);
+  border-color: rgba(244, 241, 234, 0.75);
+  background: rgba(11, 12, 14, 0.42);
 }
 
 /* ---- Cards de serviço ---- */
@@ -822,14 +1051,6 @@ html.force-visible .reveal {
   color: var(--color-white);
   font-size: var(--fs-xl);
   max-width: 520px;
-}
-
-.cta-band .btn-primary {
-  background: var(--color-accent);
-  color: var(--color-on-accent);
-}
-.cta-band .btn-primary:hover {
-  background: var(--color-accent-strong);
 }
 
 /* ---- Depoimentos ---- */
@@ -1021,6 +1242,10 @@ html.force-visible .reveal {
   }
 }
 
+.footer .brand {
+  justify-content: flex-start;
+}
+
 .footer h3 {
   font-size: var(--fs-sm);
   color: var(--color-text-faint);
@@ -1100,7 +1325,7 @@ html.force-visible .reveal {
 
 /* ============================================================
    4) LOGO E PALETA TROCÁVEIS (AV3.1) — sem JavaScript
-   <html data-logo="L1|L2|L3|L4" data-paleta="P1|P2|P3|P4">
+   <html data-logo="L3" data-paleta="P1"> (padrão; L1–L4 e P1–P4 seguem disponíveis)
    P1 é o padrão e já está em :root (acima). As outras só trocam os tokens.
    Contraste AA conferido (ver RELATORIO-AV3.1.md).
    ============================================================ */
@@ -1109,6 +1334,8 @@ html.force-visible .reveal {
 .logo-svg {
   width: 36px;
   height: 36px;
+  /* sem o max-width: 100% global: na coluna auto do header ele pode zerar o símbolo */
+  max-width: none;
   flex-shrink: 0;
 }
 .logo-svg .lg {
@@ -1435,4 +1662,8 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
 }
 html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .intro-overlay, .cta-band, .footer) {
   color: var(--color-text);
+}
+html[data-paleta="P4"] ::selection {
+  background: #121417;
+  color: #f4f1ea;
 }

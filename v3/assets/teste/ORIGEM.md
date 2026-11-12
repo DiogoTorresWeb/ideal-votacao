@@ -1,4 +1,4 @@
-> Conjunto: v2 · conferido em 12/11/2026, sem mudança
+> Conjunto: v5 · conferido em 12/11/2026, sem mudança
 
 # Origem das fotos temporárias (teste-imagens)
 

@@ -1,45 +1,110 @@
 /* ============================================================
-   SCROLL CINEMA — intro de logo + "filme" de planos da home.
+   SCROLL CINEMA — intro de entrada + "filme" de planos da home.
    Só é usado em index.html. Tudo aqui é visível sem JS/motion:
    o estado oculto só existe sob html.motion (ver style.css, seção BASE).
    ============================================================ */
 
-/* ---- Intro (logo viajando até o cabeçalho) ---- */
+/* ---- Intro de entrada (só home, 1ª visita da sessão) ----
+   Oculta por padrão. Só aparece com html.intro-pending, que o script inline
+   do <head> põe quando não há ie_intro_seen e não há reduced-motion.
+   A coreografia é toda CSS (~1,8s): o IE entra, "Ideal Elétrica" se abre a
+   partir dele, o véu sai. A saída termina em visibility: hidden, então mesmo
+   se intro.js falhar o site fica livre. intro.js só cuida de pular e limpar. */
 .intro-overlay {
+  display: none;
+}
+
+html.intro-pending .intro-overlay {
   position: fixed;
   inset: 0;
   z-index: 95;
-  background: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-bg);
+  color: var(--color-white);
+  animation: intro-out 450ms var(--ease-in-out) 1350ms forwards;
+}
+
+html.intro-pending .intro-overlay.is-leaving {
+  animation: intro-skip-out 220ms var(--ease-out) forwards;
+}
+
+.intro-mark {
+  display: grid;
+  grid-template-columns: auto 0fr;
+  align-items: center;
+  column-gap: 0;
+  animation:
+    intro-mark-in 420ms var(--ease-out) both,
+    intro-open 650ms var(--ease-in-out) 380ms forwards;
 }
 
 .intro-logo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 96px;
-  height: 96px;
-  margin-top: -48px;
-  margin-left: -48px;
-  opacity: 0;
+  width: clamp(56px, 14vw, 76px);
+  height: clamp(56px, 14vw, 76px);
+}
+
+.intro-word {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.intro-word-inner {
+  display: block;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: "wdth" 112;
+  font-size: clamp(1.75rem, 1.2rem + 3vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  clip-path: inset(0 100% 0 0);
+  transform: translateX(-0.5em);
+  animation: intro-word-in 620ms var(--ease-out) 440ms forwards;
 }
 
 .intro-skip {
   position: absolute;
-  right: var(--space-6);
-  bottom: var(--space-6);
-  color: rgba(244, 241, 234, 0.7);
+  right: var(--space-5);
+  bottom: var(--space-5);
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-btn-sm);
+  color: rgba(244, 241, 234, 0.72);
   font-size: var(--fs-sm);
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid rgba(244, 241, 234, 0.3);
-  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out);
+}
+.intro-skip:hover {
+  color: var(--color-white);
+  background: rgba(244, 241, 234, 0.08);
+}
+.intro-skip:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
 }
 
-noscript .intro-overlay,
-html:not(.js) .intro-overlay {
-  display: none;
+@keyframes intro-mark-in {
+  from { opacity: 0; transform: scale(0.9); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes intro-open {
+  to { grid-template-columns: auto 1fr; column-gap: clamp(12px, 3vw, 18px); }
+}
+
+@keyframes intro-word-in {
+  to { clip-path: inset(0 0 0 0); transform: none; }
+}
+
+@keyframes intro-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* mesmo destino, nome próprio: ao pular, o fade recomeça curto em vez de saltar */
+@keyframes intro-skip-out {
+  to { opacity: 0; visibility: hidden; }
 }
 
 /* ---- Planos (cenas da rolagem) ---- */
