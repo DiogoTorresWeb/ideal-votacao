@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design System — {{SITE_NAME}} (AV0)</title>
+  <meta name="description" content="Tokens e componentes do design system da Ideal Elétrica — versão AV0." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .swatch { border-radius: var(--radius-md); height: 88px; display: flex; align-items: flex-end; padding: var(--space-3); font-size: var(--fs-xs); font-weight: 700; border: 1px solid var(--color-border); }
+    .swatch-label { background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; }
+    .type-row { border-bottom: 1px solid var(--color-border); padding-block: var(--space-5); display: flex; align-items: baseline; gap: var(--space-5); flex-wrap: wrap; }
+    .type-row code { color: var(--color-text-faint); font-size: var(--fs-xs); }
+    .space-row { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3); }
+    .space-bar { background: var(--color-accent); height: 12px; }
+    .token-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+    .token-table th, .token-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); }
+  </style>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-ie.svg" alt="" />
+        <span data-site="name">Ideal Elétrica</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <a href="design-system.html" class="btn btn-outline btn-sm nav-cta">Design System</a>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <main id="conteudo">
+    <div class="page-header container">
+      <span class="eyebrow">Design System · AV0</span>
+      <h1>Tokens e componentes</h1>
+      <p class="lede">
+        Referência viva do que existe hoje. Tudo aqui lê as variáveis de <code>assets/css/tokens.css</code> —
+        trocar marca, cor ou fonte lá reflete em todo o site.
+      </p>
+    </div>
+
+    <!-- CORES -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Cor</span><h2>Paleta base</h2></div>
+      <div class="grid grid-4">
+        <div class="swatch" style="background:#0B0B0B;"><span class="swatch-label">--color-bg #0B0B0B</span></div>
+        <div class="swatch" style="background:#141414;"><span class="swatch-label">--color-bg-elevated #141414</span></div>
+        <div class="swatch" style="background:#1C1C1C;"><span class="swatch-label">--color-surface #1C1C1C</span></div>
+        <div class="swatch" style="background:#2E2E2E;"><span class="swatch-label">--color-border #2E2E2E</span></div>
+        <div class="swatch" style="background:#FFC400; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-accent #FFC400</span></div>
+        <div class="swatch" style="background:#D9A800; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-accent-dark #D9A800</span></div>
+        <div class="swatch" style="background:#F5F5F2; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-text #F5F5F2</span></div>
+        <div class="swatch" style="background:#868682; color:#0B0B0B;"><span class="swatch-label" style="background:rgba(255,255,255,.4);">--color-text-faint #868682</span></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Tipografia</span><h2>Display + corpo de texto</h2>
+        <p class="lede">Display: <strong>Saira Condensed</strong> (itálica, bold/extrabold) · Corpo: <strong>Inter</strong>.</p>
+      </div>
+
+      <div class="type-row"><h1 style="font-size: var(--fs-3xl);">Aa Título 3XL</h1><code>--fs-3xl / h1</code></div>
+      <div class="type-row"><h2 style="font-size: var(--fs-2xl);">Aa Título 2XL</h2><code>--fs-2xl / h2</code></div>
+      <div class="type-row"><h3 style="font-size: var(--fs-xl);">Aa Título XL</h3><code>--fs-xl / h3</code></div>
+      <div class="type-row"><h4 style="font-size: var(--fs-md);">Aa Título MD</h4><code>--fs-md / h4</code></div>
+      <div class="type-row"><p style="font-size: var(--fs-base); font-family: var(--font-body);">Texto base (Inter) para parágrafos e leitura longa.</p><code>--fs-base / body</code></div>
+      <div class="type-row"><p style="font-size: var(--fs-sm); font-family: var(--font-body);" class="text-muted">Texto pequeno para legendas e metadados.</p><code>--fs-sm</code></div>
+    </section>
+
+    <!-- ESPAÇAMENTO -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Espaçamento</span><h2>Escala base 4px</h2></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-1</span><div class="space-bar" style="width: var(--space-1);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-2</span><div class="space-bar" style="width: var(--space-2);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-3</span><div class="space-bar" style="width: var(--space-3);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-4</span><div class="space-bar" style="width: var(--space-4);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-5</span><div class="space-bar" style="width: var(--space-5);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-6</span><div class="space-bar" style="width: var(--space-6);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-7</span><div class="space-bar" style="width: var(--space-7);"></div></div>
+      <div class="space-row"><span style="width: 90px;" class="text-muted">--space-8</span><div class="space-bar" style="width: var(--space-8);"></div></div>
+    </section>
+
+    <!-- RAIOS E SOMBRAS -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Raios e sombras</span><h2>Profundidade</h2></div>
+      <div class="grid grid-4">
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-sm); align-items:center; justify-content:center;">radius-sm</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-md); align-items:center; justify-content:center;">radius-md</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-lg); align-items:center; justify-content:center;">radius-lg</div>
+        <div class="swatch" style="background: var(--color-surface); border-radius: var(--radius-pill); align-items:center; justify-content:center;">radius-pill</div>
+      </div>
+      <div class="grid grid-3" style="margin-top: var(--space-6);">
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-sm); align-items:center; justify-content:center;">shadow-sm</div>
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-md); align-items:center; justify-content:center;">shadow-md</div>
+        <div class="swatch" style="background: var(--color-bg-elevated); box-shadow: var(--shadow-glow); align-items:center; justify-content:center;">shadow-glow</div>
+      </div>
+    </section>
+
+    <!-- BOTÕES -->
+    <section class="section container">
+      <div class="section-head"><span class="eyebrow">Componentes</span><h2>Botões</h2></div>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-primary">Primário</button>
+        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-primary btn-sm">Primário SM</button>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="section container">
+      <div class="section-head"><h2>Badges</h2></div>
+      <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <span class="badge">Residencial</span>
+        <span class="badge">Empresarial</span>
+        <span class="badge">Urgência</span>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section class="section container">
+      <div class="section-head"><h2>Card de serviço</h2></div>
+      <div class="grid grid-3">
+        <article class="card">
+          <img class="card-icon" src="assets/img/icon-residential.svg" alt="" />
+          <h3>Título do serviço</h3>
+          <p>Descrição curta explicando o benefício principal do serviço para o cliente.</p>
+          <a class="card-link" href="#">Saiba mais →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section container">
+      <div class="section-head"><h2>Campos de formulário</h2></div>
+      <div class="form-grid" style="max-width: 480px;">
+        <div class="field"><label for="ds-nome">Rótulo do campo</label><input type="text" id="ds-nome" placeholder="Texto de exemplo" /></div>
+        <div class="field"><label for="ds-select">Select</label><select id="ds-select"><option>Opção A</option></select></div>
+        <button class="btn btn-primary btn-block">Botão de envio</button>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTO -->
+    <section class="section container">
+      <div class="section-head"><h2>Card de depoimento</h2></div>
+      <div class="grid grid-3">
+        <article class="testimonial">
+          <blockquote>"Texto de depoimento placeholder."</blockquote>
+          <div class="testimonial-author">
+            <img src="assets/img/avatar-placeholder.svg" alt="" />
+            <div><strong>[NOME]</strong><span>[CARGO/CIDADE]</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container">
+      <div class="section-head"><h2>FAQ (accordion nativo, sem JS)</h2></div>
+      <div style="max-width: 640px;">
+        <details class="faq-item" open><summary>Pergunta de exemplo</summary><p>Resposta de exemplo usando o elemento nativo &lt;details&gt;.</p></details>
+        <details class="faq-item"><summary>Outra pergunta</summary><p>Outra resposta de exemplo.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="section container">
+      <div class="section-head"><h2>Faixa de CTA</h2></div>
+      <div class="cta-band">
+        <h2>Texto de chamada para ação</h2>
+        <a href="#" class="btn btn-primary">Botão</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>Design System AV0 — não é página pública final.</span>
+        <a href="index.html">Voltar para a Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

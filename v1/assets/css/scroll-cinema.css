@@ -1,0 +1,170 @@
+/* ============================================================
+   SCROLL CINEMA — intro de logo + "filme" de planos da home.
+   Só é usado em index.html. Tudo aqui é visível sem JS/motion:
+   o estado oculto só existe sob html.motion (ver style.css, seção BASE).
+   ============================================================ */
+
+/* ---- Intro (logo viajando até o cabeçalho) ---- */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  margin-top: -48px;
+  margin-left: -48px;
+  opacity: 0;
+}
+
+.intro-skip {
+  position: absolute;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  color: rgba(255, 253, 249, 0.7);
+  font-size: var(--fs-sm);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgba(255, 253, 249, 0.3);
+  border-radius: var(--radius-sm);
+}
+
+noscript .intro-overlay,
+html:not(.js) .intro-overlay {
+  display: none;
+}
+
+/* ---- Planos (cenas da rolagem) ---- */
+.scene {
+  position: relative;
+  min-height: 86dvh;
+  display: grid;
+  align-items: center;
+  gap: var(--space-7);
+  padding-block: var(--space-9);
+}
+
+.scene--split {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .scene--split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+  .scene--image-right .scene-media {
+    order: 2;
+  }
+  .scene--image-right .scene-text {
+    order: 1;
+  }
+}
+
+.scene-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.scene-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scene-text h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-4);
+  max-width: 14ch;
+}
+
+.scene-text p {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+
+/* ---- Planos em tela cheia (abertura, resultado, momento forte, CTA) ---- */
+.scene--full {
+  min-height: 100dvh;
+  padding-block: 0;
+}
+
+.scene--full .scene-media {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.scene--full .scene-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 61, 62, 0.35) 0%, rgba(15, 61, 62, 0.78) 100%);
+}
+
+.scene--full.scene--center .scene-media::after {
+  background: linear-gradient(180deg, rgba(15, 61, 62, 0.55), rgba(15, 61, 62, 0.65));
+}
+
+.scene--full .scene-text {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.scene--full .scene-text h2,
+.scene--full .scene-text p {
+  color: var(--color-white);
+}
+
+.scene--full .scene-text p {
+  color: rgba(255, 253, 249, 0.86);
+}
+
+.scene--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.scene--center .scene-text {
+  max-width: 620px;
+}
+
+.scene--bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.scene--bottom .scene-text {
+  max-width: 620px;
+  padding-bottom: var(--space-9);
+}
+
+.scene--momento .scene-text h2 {
+  font-size: var(--fs-3xl);
+  max-width: 16ch;
+}
+
+.scene-actions {
+  margin-top: var(--space-6);
+}
+
+/* ---- WhatsApp flutuante some durante a intro ---- */
+.wa-float[hidden] {
+  display: none;
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Ícone de instalações comerciais e empresariais">
+  <rect x="10" y="8" width="20" height="34" fill="none" stroke="#F5F5F2" stroke-width="2.5"/>
+  <rect x="30" y="18" width="10" height="24" fill="none" stroke="#F5F5F2" stroke-width="2.5"/>
+  <rect x="15" y="14" width="4" height="4" fill="#F5F5F2"/>
+  <rect x="22" y="14" width="4" height="4" fill="#F5F5F2"/>
+  <rect x="15" y="22" width="4" height="4" fill="#F5F5F2"/>
+  <rect x="22" y="22" width="4" height="4" fill="#F5F5F2"/>
+  <path d="M34 24 L30 32 H34 L32 40 L39 30 H35 Z" fill="#FFC400"/>
+</svg>

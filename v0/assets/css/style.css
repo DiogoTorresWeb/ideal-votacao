@@ -1,0 +1,6 @@
+/* Ideal Elétrica — folha de estilo principal.
+   Importa os três blocos: tokens (trocar marca/cor/fonte aqui),
+   base (reset/tipografia) e components (peças reutilizáveis). */
+@import url("tokens.css");
+@import url("base.css");
+@import url("components.css");

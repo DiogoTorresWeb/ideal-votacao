@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" role="img" aria-label="Ilustração abstrata representando energia elétrica e circuitos">
+  <circle cx="280" cy="280" r="220" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+  <circle cx="280" cy="280" r="160" fill="none" stroke="#2E2E2E" stroke-width="1.5"/>
+
+  <g stroke="#3D3D3D" stroke-width="2" fill="none">
+    <path d="M60 280 H180"/>
+    <path d="M380 280 H500"/>
+    <path d="M280 60 V180"/>
+    <path d="M280 380 V500"/>
+    <circle cx="180" cy="280" r="6" fill="#3D3D3D"/>
+    <circle cx="380" cy="280" r="6" fill="#3D3D3D"/>
+    <circle cx="280" cy="180" r="6" fill="#3D3D3D"/>
+    <circle cx="280" cy="380" r="6" fill="#3D3D3D"/>
+  </g>
+
+  <path d="M305 90 L220 300 H268 L250 470 L365 240 H312 Z" fill="#FFC400"/>
+  <circle cx="280" cy="280" r="260" fill="none" stroke="#1C1C1C" stroke-width="1"/>
+</svg>

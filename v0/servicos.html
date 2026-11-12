@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+<meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serviços — {{SITE_NAME}}</title>
+  <meta name="description" content="Instalação, manutenção e projetos elétricos para residências e empresas: condomínios, comércios, indústrias e obras em Itaquaquecetuba e Grande SP." />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-ie.svg" alt="" />
+        <span data-site="name">Ideal Elétrica</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicos.html" aria-current="page">Serviços</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <a href="contato.html" class="btn btn-primary btn-sm nav-cta">Peça seu orçamento</a>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="contato.html" class="btn btn-primary btn-block">Peça seu orçamento</a>
+  </div>
+
+  <main id="conteudo">
+    <div class="page-header container">
+      <span class="eyebrow">Serviços</span>
+      <h1>Elétrica para quem mora e para quem constrói</h1>
+      <p class="lede">
+        Organizamos os serviços por público para facilitar seu orçamento — escolha Residencial
+        ou Empresas abaixo. Cada bloco pode, no futuro, virar uma página dedicada por especialidade.
+      </p>
+    </div>
+
+    <section class="section container">
+      <div role="tablist" class="audience-tabs" aria-label="Filtrar serviços por público">
+        <button class="audience-tab" role="tab" aria-selected="true" aria-controls="residencial">Residencial</button>
+        <button class="audience-tab" role="tab" aria-selected="false" aria-controls="empresas">Empresas</button>
+      </div>
+
+      <!-- RESIDENCIAL -->
+      <div class="audience-panel" id="residencial" role="tabpanel">
+        <div class="grid grid-3">
+          <article class="card" id="instalacao-residencial">
+            <img class="card-icon" src="assets/img/icon-residential.svg" alt="" />
+            <h3>Instalações residenciais</h3>
+            <p>Construção nova, reforma, troca de fiação e pontos elétricos com projeto e acabamento cuidadoso.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-maintenance.svg" alt="" />
+            <h3>Quadros de distribuição</h3>
+            <p>Troca, atualização e adequação de quadros elétricos residenciais às normas vigentes.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-residential.svg" alt="" />
+            <h3>Iluminação e automação</h3>
+            <p>Projetos de iluminação, pontos inteligentes e automação residencial básica.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-maintenance.svg" alt="" />
+            <h3>Manutenção preventiva</h3>
+            <p>Inspeção periódica para identificar riscos antes que se tornem problemas.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-emergency.svg" alt="" />
+            <h3>Atendimento de urgência</h3>
+            <p>Falta de energia, curto-circuito ou quadro queimado — atendimento prioritário.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-residential.svg" alt="" />
+            <h3>Laudos e vistorias</h3>
+            <p>[A DEFINIR] Vistoria elétrica para compra, venda ou locação de imóvel.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- EMPRESAS -->
+      <div class="audience-panel" id="empresas" role="tabpanel" hidden>
+        <div class="grid grid-3">
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-commercial.svg" alt="" />
+            <h3>Instalações comerciais</h3>
+            <p>Lojas, escritórios e galpões — projeto e execução elétrica completa.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-commercial.svg" alt="" />
+            <h3>Subestações e quadros industriais</h3>
+            <p>[A DEFINIR] Dimensionamento e instalação para cargas industriais.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-condo.svg" alt="" />
+            <h3>Condomínios</h3>
+            <p>Áreas comuns, quadros gerais, iluminação e manutenção programada com contrato.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-construction.svg" alt="" />
+            <h3>Obras e construtoras</h3>
+            <p>Instalação elétrica acompanhando o cronograma da obra, do início à entrega.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-maintenance.svg" alt="" />
+            <h3>Contratos de manutenção</h3>
+            <p>Manutenção preditiva e preventiva recorrente para reduzir paradas não planejadas.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+          <article class="card">
+            <img class="card-icon" src="assets/img/icon-commercial.svg" alt="" />
+            <h3>Laudos técnicos</h3>
+            <p>[A DEFINIR] Laudos e documentação técnica (ex.: NR10, AVCB) conforme exigência do imóvel.</p>
+            <a class="card-link" href="contato.html">Solicitar orçamento →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="cta-band">
+        <h2>Não achou o serviço que precisa? Fale com a gente.</h2>
+        <a href="contato.html" class="btn btn-primary">Descrever meu projeto</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head center">
+        <span class="eyebrow">Dúvidas comuns</span>
+        <h2>Sobre nossos serviços</h2>
+      </div>
+      <div style="max-width: 760px; margin-inline: auto;">
+        <details class="faq-item" open>
+          <summary>Vocês atendem emergência fora do horário comercial?</summary>
+          <p>[A DEFINIR] — descreva aqui se há plantão, horário estendido ou taxa de urgência.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Fazem orçamento sem compromisso?</summary>
+          <p>[A DEFINIR] — confirme a política de orçamento e visita técnica.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Atendem fora de Itaquaquecetuba?</summary>
+          <p>Sim, atendemos toda a Grande São Paulo, residências e empresas.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img src="assets/img/logo-ie.svg" alt="" />
+            <span data-site="name">Ideal Elétrica</span>
+          </a>
+          <p class="lede" data-site="slogan" style="margin-top: var(--space-4);">Projetando • Instalando • Conectando com você</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><a data-site-href="phone" href="#"><span data-site="phone">[TELEFONE]</span></a></li>
+            <li><a data-site-href="wa" href="#">WhatsApp: <span data-site="whatsapp">[WHATSAPP]</span></a></li>
+            <li><a data-site-href="email" href="#"><span data-site="email">[EMAIL]</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Área de atuação</h4>
+          <p class="text-muted" style="font-size: var(--fs-sm);" data-site="serviceArea">Itaquaquecetuba e toda a Grande São Paulo</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> <span data-site="name">Ideal Elétrica</span>. Todos os direitos reservados.</span>
+        <span>CNPJ: <span data-site="cnpj">[CNPJ]</span> · <span data-site="address">[ENDERECO]</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
