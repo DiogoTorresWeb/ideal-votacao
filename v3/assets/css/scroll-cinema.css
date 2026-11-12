@@ -1,0 +1,232 @@
+/* ============================================================
+   SCROLL CINEMA — intro de logo + "filme" de planos da home.
+   Só é usado em index.html. Tudo aqui é visível sem JS/motion:
+   o estado oculto só existe sob html.motion (ver style.css, seção BASE).
+   ============================================================ */
+
+/* ---- Intro (logo viajando até o cabeçalho) ---- */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 96px;
+  height: 96px;
+  margin-top: -48px;
+  margin-left: -48px;
+  opacity: 0;
+}
+
+.intro-skip {
+  position: absolute;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  color: rgba(244, 241, 234, 0.7);
+  font-size: var(--fs-sm);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgba(244, 241, 234, 0.3);
+  border-radius: var(--radius-sm);
+}
+
+noscript .intro-overlay,
+html:not(.js) .intro-overlay {
+  display: none;
+}
+
+/* ---- Planos (cenas da rolagem) ---- */
+.scene {
+  position: relative;
+  min-height: 86dvh;
+  display: grid;
+  align-items: center;
+  gap: var(--space-7);
+  padding-block: var(--space-9);
+}
+
+.scene--split {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .scene--split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+  .scene--image-right .scene-media {
+    order: 2;
+  }
+  .scene--image-right .scene-text {
+    order: 1;
+  }
+}
+
+.scene-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.scene-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scene-text h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-4);
+  max-width: 14ch;
+}
+
+.scene-text p {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+}
+
+/* ---- Planos em tela cheia (abertura, resultado, momento forte, CTA) ---- */
+.scene--full {
+  min-height: 100dvh;
+  padding-block: 0;
+}
+
+.scene--full .scene-media {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.scene--full .scene-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 12, 14, 0.25) 0%, rgba(11, 12, 14, 0.8) 100%);
+}
+
+.scene--full.scene--center .scene-media::after {
+  background: linear-gradient(180deg, rgba(11, 12, 14, 0.5), rgba(11, 12, 14, 0.62));
+}
+
+.scene--full .scene-text {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.scene--full .scene-text h2,
+.scene--full .scene-text p {
+  color: var(--color-white);
+}
+
+.scene--full .scene-text p {
+  color: rgba(244, 241, 234, 0.86);
+}
+
+.scene--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.scene--center .scene-text {
+  max-width: 620px;
+}
+
+.scene--bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.scene--bottom .scene-text {
+  max-width: 620px;
+  padding-bottom: var(--space-9);
+}
+
+.scene--momento .scene-text h2 {
+  font-size: var(--fs-3xl);
+  max-width: 16ch;
+}
+
+.scene-actions {
+  margin-top: var(--space-6);
+}
+
+/* ---- WhatsApp flutuante some durante a intro ---- */
+.wa-float[hidden] {
+  display: none;
+}
+
+/* ---- AV3: assinatura preto e amarelo ---- */
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Moldura fina com cantos amarelos nas fotos em duas colunas (ideia de borda sutil, sem caixa pesada) */
+.scene--split .scene-media {
+  border: 1px solid var(--color-border-strong);
+  box-shadow: none;
+}
+.scene--split .scene-media::before,
+.scene--split .scene-media::after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  z-index: 1;
+  pointer-events: none;
+  border: 0 solid var(--color-accent);
+}
+.scene--split .scene-media::before {
+  top: 0;
+  left: 0;
+  border-top-width: 4px;
+  border-left-width: 4px;
+}
+.scene--split .scene-media::after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+}
+.scene--split .scene-text h2::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 4px;
+  background: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+/* Único momento forte: um filete amarelo que atravessa a tela com a rolagem */
+.momento-line {
+  display: block;
+  height: 4px;
+  background: var(--color-accent);
+  margin: 0 auto var(--space-6);
+  max-width: 560px;
+  transform-origin: left;
+}
+html.motion .momento-line {
+  transform: scaleX(0);
+}
+html.force-visible .momento-line { transform: none; }
