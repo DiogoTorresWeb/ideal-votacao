@@ -29,6 +29,7 @@
     document.body.style.overflow = "";
     html.classList.remove("intro-pending");
     if (intro.parentNode) intro.remove();
+    try { html.dispatchEvent(new CustomEvent("ie:intro-done")); } catch (e) {}
   }
 
   function skip(e) {

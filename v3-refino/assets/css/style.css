@@ -1190,6 +1190,16 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .cta-band
   margin-top: 3px;
 }
 
+.field-check a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.field-check a:hover {
+  color: var(--color-accent);
+}
+
 .form-note {
   font-size: var(--fs-xs);
   color: var(--color-text-faint);
@@ -1666,4 +1676,327 @@ html[data-paleta="P4"] :is(.header, .hero, .scene--full, .mobile-menu, .intro-ov
 html[data-paleta="P4"] ::selection {
   background: #121417;
   color: #f4f1ea;
+}
+
+
+/* ---- Rodapé: links legais e preferências de cookies ---- */
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-legal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
+  align-items: center;
+}
+
+.footer-legal-nav a,
+.footer-consent {
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.footer-legal-nav a:hover,
+.footer-consent:hover {
+  color: var(--color-accent);
+}
+
+.footer-consent:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.footer-legal-nav a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+/* ---- Faixa de consentimento (não modal; aceitar e recusar com o mesmo peso) ---- */
+.cmp {
+  position: fixed;
+  z-index: 100;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 800px) {
+  .cmp {
+    left: 50%;
+    right: auto;
+    width: calc(100% - 2 * var(--space-6));
+    transform: translateX(-50%);
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: var(--space-6);
+    padding: var(--space-5) var(--space-6);
+  }
+}
+
+.cmp__t {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.cmp__d {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  max-width: 54ch;
+  text-wrap: pretty;
+}
+
+.cmp__b {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cmp__l {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--fs-xs);
+}
+
+.cmp__l a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.cmp__l a:hover {
+  color: var(--color-accent);
+}
+
+.cmp__set {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.cmp__set[hidden] {
+  display: none !important;
+}
+
+.cmp__set label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--space-3);
+  align-items: start;
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.cmp__set label input {
+  margin-top: 0.2em;
+}
+
+.cmp__set label span {
+  display: block;
+  grid-column: 2;
+  font-weight: 400;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.cmp .btn-ghost {
+  color: var(--color-text);
+}
+
+@media (max-width: 639px) {
+  .cmp {
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+    padding: var(--space-4);
+    border-radius: 14px;
+    max-height: calc(100dvh - 1.25rem);
+    overflow: auto;
+  }
+  .cmp:has(.cmp__set:not([hidden])) .cmp__d {
+    display: none;
+  }
+  .cmp__b {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cmp__b .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  .cmp__b .btn-ghost {
+    width: auto;
+    align-self: center;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp { transition: none; }
+}
+
+/* Enquanto a faixa está aberta, o WhatsApp flutuante some para não cobrir os botões. */
+html.has-cmp .wa-float {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---- Páginas legais ---- */
+.legal {
+  padding-block: var(--space-7) var(--space-9);
+}
+
+.legal-notice {
+  margin: 0 0 var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  width: 100%;
+  max-width: 42rem; /* mesmo compasso do legal-body, não em ch do fs-sm */
+  box-sizing: border-box;
+}
+
+.legal-notice strong {
+  color: var(--color-text);
+  font-weight: 650;
+}
+
+.legal-updated {
+  color: var(--color-text-faint);
+  font-size: var(--fs-sm);
+}
+
+.legal-body {
+  max-width: 42rem;
+}
+
+.legal-body section + section {
+  margin-top: var(--space-7);
+}
+
+.legal-body h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-4);
+}
+
+.legal-body p,
+.legal-body li {
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
+
+.legal-body p + p,
+.legal-body p + ul,
+.legal-body ul + p {
+  margin-top: var(--space-4);
+}
+
+.legal-body ul {
+  padding-left: 1.2em;
+}
+
+.legal-body li + li {
+  margin-top: var(--space-2);
+}
+
+.legal-body a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.legal-body a:hover {
+  color: var(--color-accent);
+}
+
+.legal-ficha {
+  display: grid;
+  gap: var(--space-3) var(--space-6);
+  margin: var(--space-5) 0 0;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+@media (min-width: 640px) {
+  .legal-ficha {
+    grid-template-columns: 11rem 1fr;
+    align-items: baseline;
+  }
+  .legal-ficha > div {
+    display: contents;
+  }
+}
+
+.legal-ficha dt {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.legal-ficha dd {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+}
+
+.legal-pend {
+  color: var(--color-accent);
+  font-weight: 650;
+  font-style: normal;
+}
+
+
+/* No mobile o WhatsApp flutuante não pode cobrir links do rodapé nem o texto legal. */
+@media (max-width: 1023px) {
+  .footer {
+    padding-bottom: calc(var(--space-6) + 72px);
+  }
+  .footer-legal-nav,
+  .legal-notice,
+  .legal-body {
+    padding-right: calc(56px + var(--space-5) + var(--space-4));
+    box-sizing: border-box;
+  }
 }

@@ -14,6 +14,16 @@ window.SITE_CONFIG = {
   whatsappLink: "https://wa.me/5511977670633?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento",
   email: "[EMAIL]",
   address: "[ENDERECO]",
-  cnpj: "[CNPJ]",
   serviceArea: "Itaquaquecetuba e toda a Grande São Paulo",
+  /* Controlador é pessoa física, sem CNPJ e sem MEI.
+     O CPF não vai no rodapé (ver LEGAL.md). Aparece só nas páginas legais. */
+  ownerName: "[NOME DO RESPONSÁVEL]",
+  cpf: "[CPF]",
+  domain: "[DOMINIO]",
+  hosting: "[PROVEDOR DE HOSPEDAGEM]",
+  retention: "[PRAZO DE CONSERVAÇÃO]",
+  venue: "[COMARCA]",
+  policyDate: "[DATA DA VERSÃO]",
+  dpo: "[ENCARREGADO, se houver]",
+  photoSource: "[TITULARIDADE DAS FOTOS]",
 };

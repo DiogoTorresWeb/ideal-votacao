@@ -9,6 +9,20 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-variable-latin.woff2" crossorigin />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Consent Mode v2: tudo negado até a pessoa decidir. Não carrega ferramenta. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      functionality_storage: "granted",
+      security_storage: "granted",
+      wait_for_update: 500
+    });
+  </script>
 </head>
 <body>
   <div id="scroll-sentinel" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px;"></div>
@@ -151,8 +165,16 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> <span data-site="name">Ideal Elétrica</span>. Todos os direitos reservados.</span>
-        <span>CNPJ: <span data-site="cnpj">[CNPJ]</span> · <span data-site="address">[ENDERECO]</span></span>
+        <div class="footer-legal">
+          <span>© <span id="year"></span> <span data-site="name">Ideal Elétrica</span>. Todos os direitos reservados.</span>
+          <span><span data-site="ownerName">[NOME DO RESPONSÁVEL]</span> · Pessoa física · <span data-site="address">[ENDERECO]</span></span>
+        </div>
+        <nav class="footer-legal-nav" aria-label="Informações legais">
+          <a href="privacidade.html">Privacidade</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="termos.html">Termos de uso</a>
+          <button type="button" class="footer-consent" data-cmp-open>Preferências de cookies</button>
+        </nav>
       </div>
     </div>
   </footer>
@@ -163,6 +185,7 @@
 
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/consent.js"></script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
